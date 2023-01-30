@@ -1,15 +1,15 @@
 import React from 'react'
 import Todos from './components/Todos'
-import Todo from './models/todo'
+import NewTodos from './components/NewTodos'
+import { TodoContextProvider } from './components/store/TodoContextProvider';
 const App = () => {
-    const todos = [
-        new Todo("Learn ts"),
-        new Todo("Learn Javascript")
-    ]
+    
+
   return (
-    <div>
-      <Todos items={todos}/>
-    </div>
+    <TodoContextProvider>
+        <NewTodos />
+      <Todos />
+    </TodoContextProvider>
   )
 }
 
